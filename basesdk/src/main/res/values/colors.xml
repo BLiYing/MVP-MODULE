@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#F5F5F5</color>
+    <color name="colorPrimaryDark">#7D7D7D</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--默认页面小标题字体颜色-->
+    <color name="default_font_color">#949494</color>
+    <!--背景色-->
+    <color name="backgroundColor">#FFFFFF</color>
+
+    <color name="red">#ffff4444</color>
+    <color name="white">#ffffff</color>
+    <color name="navigation_bg">#F5F5F5</color>
+
+    <!--分割线颜色-->
+    <color name="division">#E8E8E8</color>
+
+    <!--按钮颜色-->
+    <color name="theam_red">#ED4747</color>
+
+    <!--toorbar按钮颜色-->
+    <color name="theme_trans">#4c000000</color>
+
+    <!--permissionDialog-->
+    <color name="color_dialog_gray">#ededf3</color>
+    <color name="color_dialog_title">#303030</color>
+    <color name="color_dialog_content_prompt">#343434</color>
+
+    <color name="color_type_info">#79b3e4</color>
+    <color name="color_type_help">#e8bd4b</color>
+    <color name="color_type_wrong">#ed7861</color>
+    <color name="color_type_warning">#e8bd4b</color>
+    <color name="color_type_success">#90b06e</color>
+    <color name="main_textcolor">#4c4c4c</color>
+</resources>

@@ -1,0 +1,156 @@
+    if (isModule.toBoolean()) {
+        apply plugin: 'com.android.application'
+    } else {
+        apply plugin: 'com.android.library'
+    }
+    //realm数据库
+    apply plugin: 'realm-android'
+    android {
+        compileSdkVersion rootProject.ext.android.compileSdkVersion
+        buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+        defaultConfig {
+            minSdkVersion rootProject.ext.android.minSdkVersion
+            targetSdkVersion rootProject.ext.android.targetSdkVersion
+            versionCode rootProject.ext.android.versionCode
+            versionName rootProject.ext.android.versionName
+
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [moduleName: project.getName()]
+                }
+            }
+        }
+
+        sourceSets {
+            main {
+                if (isModule.toBoolean()) {
+                    manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                    //集成开发模式下则需要排除debug文件夹中的所有Java文件
+                    java {
+                        exclude 'debug/**'
+                    }
+                }
+            }
+        }
+
+
+        //正式签名
+        /*signingConfigs {
+            release {
+
+
+                storeFile file(RELEASE_STOREFILE)
+                storePassword RELEASE_STORE_PASSWORD
+                keyAlias RELEASE_KEY_ALIAS
+                keyPassword RELEASE_KEY_PASSWORD
+            }
+        }*/
+
+
+
+        buildTypes {
+
+            //默认debug编译时
+            debug {
+                // 显示Log
+                buildConfigField "boolean", "LOG_DEBUG", "true"
+                versionNameSuffix "-debug"
+                minifyEnabled false
+                zipAlignEnabled false
+                shrinkResources false
+                //            signingConfig signingConfigs.debug
+            }
+            release {
+                // 不显示Log
+                buildConfigField "boolean", "LOG_DEBUG", "false"
+                // 不混淆
+                minifyEnabled false
+                zipAlignEnabled false
+                // 移除无用的resource文件
+                shrinkResources false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+                //            signingConfig signingConfigs.release
+            }
+        }
+
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+            ignoreWarnings true
+        }
+
+        //用来关闭Android Studio的PNG合法性检查的，直接不让它检查。
+        aaptOptions.cruncherEnabled = false
+        aaptOptions.useNewCruncher = false
+
+
+        packagingOptions {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/DEPENDENCIES.txt'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/LICENSE.txt'
+            //        exclude 'META-INFTICE'
+            //        exclude 'META-INFTICE.txt'
+        }
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+
+    dependencies {
+//        implementation 'com.google.android.gms:play-services-plus:15.0.1'
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        implementation rootProject.ext.dependencies.appcompat
+        implementation rootProject.ext.dependencies.recyclerview
+        implementation rootProject.ext.dependencies.support
+        implementation rootProject.ext.dependencies.cardview
+        //更新库
+        implementation project(':checkupdatelibrary')
+        //基础库
+        implementation project(':basesdk')
+
+        implementation rootProject.ext.dependencies.appcompat
+        implementation rootProject.ext.dependencies.constraint
+        implementation rootProject.ext.dependencies.recyclerview
+        implementation rootProject.ext.dependencies.support
+        implementation rootProject.ext.dependencies.cardview
+
+
+        //retrofit
+        implementation rootProject.ext.dependencies.rxbinding
+        implementation rootProject.ext.dependencies.retrofit2
+        implementation rootProject.ext.dependencies.retrofit2_gson
+        implementation rootProject.ext.dependencies.retrofit2_rxjava
+
+        implementation rootProject.ext.dependencies.okhttp3_logging
+        implementation rootProject.ext.dependencies.okhttp3
+        //数据库
+        implementation rootProject.ext.dependencies.hawk
+
+        //fastjson
+        implementation rootProject.ext.dependencies.gson
+        implementation rootProject.ext.dependencies.fastjson
+
+        implementation rootProject.ext.dependencies.jsoup
+        implementation rootProject.ext.dependencies.glide
+        implementation rootProject.ext.dependencies.bottom_navigation_bar
+        implementation rootProject.ext.dependencies.butterknife
+        annotationProcessor rootProject.ext.dependencies.butterknife_compiler
+        implementation rootProject.ext.dependencies.multidex
+
+        implementation rootProject.ext.dependencies.easyrecyclerview
+        implementation rootProject.ext.dependencies.permission_yzj
+        implementation rootProject.ext.dependencies.android_weak_handler
+        implementation rootProject.ext.dependencies.bingoogolapple_banner
+        implementation rootProject.ext.dependencies.indexablerecyclerview
+
+    }

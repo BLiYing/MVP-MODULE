@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/page_vertical"
+    android:paddingLeft="@dimen/page_horizontal"
+    android:paddingRight="@dimen/page_horizontal"
+    android:paddingTop="@dimen/margin_40">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_number"
+        android:textColor="@color/default_font_color"
+        android:textSize="@dimen/textSize_16" />
+
+    <xyz.windback.basesdk.view.ClearEditText
+        android:id="@+id/edPhone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/normal_height"
+        android:background="@color/white"
+        android:hint="@string/input_phone"
+        android:inputType="phone"
+        android:lines="1"
+        android:maxLength="11"
+        android:padding="4dp"
+        android:textSize="@dimen/textSize_14" />
+
+    <View style="@style/LineH" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:text="@string/message_code"
+        android:textColor="@color/default_font_color"
+        android:textSize="@dimen/textSize_16" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:orientation="horizontal">
+
+        <xyz.windback.basesdk.view.ClearEditText
+            android:id="@+id/edCode"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/normal_height"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:hint="@string/input_message_code"
+            android:inputType="number"
+            android:lines="1"
+            android:padding="4dp"
+            android:textSize="@dimen/textSize_14" />
+
+        <Button
+            android:id="@+id/btnCode"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:background="@drawable/selector_btn_code"
+            android:padding="@dimen/margin_4"
+            android:text="@string/get_message_code"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_12" />
+
+    </LinearLayout>
+
+    <View style="@style/LineH" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/commen_btn"
+        android:layout_marginTop="@dimen/margin_40"
+        android:text="@string/register" />
+
+
+</LinearLayout>

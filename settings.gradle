@@ -1,0 +1,1 @@
+include ':app',':checkupdatelibrary',':basesdk', ':voice_module',':main_module'

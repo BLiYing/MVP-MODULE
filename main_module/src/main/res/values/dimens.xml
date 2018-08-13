@@ -1,0 +1,37 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="textSize_18">18.0sp</dimen>
+    <dimen name="textSize_16">16.0sp</dimen>
+    <dimen name="textSize_14">14.0sp</dimen>
+    <dimen name="textSize_12">12.0sp</dimen>
+    <dimen name="textSize_10">10.0sp</dimen>
+
+    <!--bookfragment相关-->
+
+    <dimen name="same_btn_padding">4dp</dimen>
+    <dimen name="same_btn_radius">8dp</dimen>
+    <dimen name="plan_title">16sp</dimen>
+    <dimen name="plan_second_title">12sp</dimen>
+    <dimen name="mine_second_title">14sp</dimen>
+
+
+    <!--页面的通用边距-->
+    <dimen name="page_horizontal">20dp</dimen>
+    <dimen name="page_vertical">20dp</dimen>
+
+    <!--margin padding  边距-->
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_40">40dp</dimen>
+
+
+    <!--标准行高-->
+    <dimen name="normal_height">48dp</dimen>
+
+    <!--我的订单布局-->
+
+
+</resources>

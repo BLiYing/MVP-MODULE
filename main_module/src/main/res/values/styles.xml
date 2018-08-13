@@ -1,0 +1,46 @@
+<resources>
+
+
+
+    <!--启动屏幕-->
+    <style name="LauncherActivityTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/logo_welcome</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+
+    <!--自定义权限Alert-->
+    <style name="PromptDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+    <!--默认btn样式-->
+    <style name="commen_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/textSize_18</item>
+        <item name="android:background">@drawable/selector_same_btn</item>
+    </style>
+
+    <!--横向分割线-->
+    <style name="LineH">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/division</item>
+    </style>
+
+    <!--纵向分割线-->
+
+    <!--轮播图样式-->
+
+
+</resources>
